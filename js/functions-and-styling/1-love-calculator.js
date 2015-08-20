@@ -1,6 +1,6 @@
 'use strict';
 
-var firstName = 'Dan', secondName = 'Kane';
+var firstName = 'Dan', secondName = 'Kabe';
 var calcLove = function(name1, name2){
 
     var nameLength = name1.length+name2.length-(Math.round(Math.random()*7));
