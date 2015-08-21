@@ -1,20 +1,13 @@
 'use strict';
 
 var rollDice = function(sides) {
-    return Math.round(Math.random()*sides)+1;
-}
+    return Math.ceil(Math.random()*sides);
+};
 
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
-console.log(rollDice(6));
+var stats = {};
+var roll;
+for (var i =0; i < 100000; i++) {
+    roll = rollDice(6);
+    stats[roll] = stats[roll] ? stats[roll] +1 : 1;
+}
+console.log(stats);
