@@ -1,16 +1,16 @@
+'use strict';
 
+var myPostCode = 'Random non postcode text SR2 7BY surrounding an actual postcode.#;:][{}<>,.', number = '123', notNumber = 's23';
 
-var myPostCode = 'SR2 7BY', number = '123', notNumber = 's23';
-
-validate = function(inputRegex, string){
-    regex = new RegExp(inputRegex);
+var validate = function(inputRegex, string){
+    var regex = new RegExp(inputRegex);
     return regex.test(string);
 };
 
-validateAlt = function(nonStringRegex, string){
+var validateAlt = function(nonStringRegex, string){
     return nonStringRegex.test(string);
 };
-var postCodeRegex = '^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$', numberRegex = /^\d+$/i;
+var postCodeRegex = /^[\s\S]*[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}[\s\S]*$/i, numberRegex = /^\d+$/i;
 
 console.log(validate(postCodeRegex, myPostCode) ? "Postcode " + myPostCode + " is valid" : "Postcode " + myPostCode + " is Invalid");
 
