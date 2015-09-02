@@ -1,0 +1,7 @@
+'use strict';
+
+var convertCToF = function(celcius){
+    return ((celcius * (9 / 5)) + 32);
+}
+
+console.log('21 Celcius is '+convertCToF(21)+' Farenheit');
