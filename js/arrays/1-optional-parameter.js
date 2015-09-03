@@ -1,13 +1,14 @@
 'use strict';
 
 function returnEntries(array, upTo) {
-    var i = 0;
-    var values = [];
-    do{
-        values.push(array[i]);
-        i++;
-    }while (upTo > i);
-    return values;
+    var values;
+    if(upTo !== undefined){
+        values = array.slice(0,upTo);
+        return values;
+    }
+    else {
+        return array[0];
+    }
 }
 
 var myArray = [1,2,3,4,5,6,7,8,9,0];
